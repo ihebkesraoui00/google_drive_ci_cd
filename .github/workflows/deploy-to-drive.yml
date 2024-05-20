@@ -20,12 +20,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: List files for debugging
-        run: ls -R
-          
+        run: |
+          echo "Current directory structure:"
+          find .
+
       - name: Upload apk to Google Drive
         uses: logickoder/google-drive-upload@main
         with:
           credentials: ${{ secrets.GCP_CREDENTIAL }}
-          filename: "app.py" # Adjust the filename based on your repo structure
+          filename: "app.py" # Adjust this if find command shows a different path
           folderID: ${{ secrets.DRIVE_FOLDER_ID }}
           overwrite: "true"
