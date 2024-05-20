@@ -26,6 +26,6 @@ jobs:
         uses: logickoder/google-drive-upload@main
         with:
           credentials: ${{ secrets.GCP_CREDENTIAL }}
-          filename: "projects/google drive ci cd/app.py"
+          filename: "google drive ci cd/app.py"
           folderID: ${{ secrets.DRIVE_FOLDER_ID }}
           overwrite: "true"
