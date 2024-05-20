@@ -28,6 +28,6 @@ jobs:
         uses: logickoder/google-drive-upload@main
         with:
           credentials: ${{ secrets.GCP_CREDENTIAL }}
-          filename: "app.py" # Adjust this if find command shows a different path
+          filename: "./app.py " # Adjust this if find command shows a different path
           folderID: ${{ secrets.DRIVE_FOLDER_ID }}
           overwrite: "true"
